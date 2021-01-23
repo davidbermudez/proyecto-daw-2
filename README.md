@@ -43,16 +43,17 @@ Para el desarrollo de la aplicación web se pretende utilizar el framework Djang
 Si se aprueba el anteproyecto se comenzará con el desarrollo en varias fases:
 
 - Fase de planificación y diseño:
--- Planificación diseño y estructura de la Web
--- Planificación y diseño base de datos
+    - Planificación diseño y estructura de la Web
+    - Planificación y diseño base de datos
 - Fase de desarrollo:
--- Esta aplicación no contiene un front-end propiamente dicho. Todo es back-end, desplegando ante el usuario un panel de control con los correspondientes menús y accesos directos. No obstante se prevé que el uso de CSS/Javascript sea generosa
--- Utilización de Django para desarrollar la web
+    - Esta aplicación no contiene un front-end propiamente dicho. Todo es back-end, desplegando ante el usuario un panel de control con los correspondientes menús y accesos directos. No obstante se prevé que el uso de CSS/Javascript sea generosa
+    - Utilización de Django para desarrollar la web
 - Fase de Despliegue
--- Acceso a ssh a un servidor
--- Creación de un entorno virtual
--- Clone de la aplicación
--- Instalación de certificado Let’s Encrypt usando Certbot (importante para el acceso seguro desde la página web)
+    - Acceso a ssh a un servidor
+    - Creación de un entorno virtual
+    - Clone de la aplicación
+    - Instalación de certificado Let’s Encrypt usando Certbot (importante para el acceso seguro desde la página web)
+
 Teniendo hasta la entrega y presentación del proyecto 12 semanas, el tiempo disponible se reparte de la siguiente manera:
 
 - Planificación y Diseño: 2 semanas
