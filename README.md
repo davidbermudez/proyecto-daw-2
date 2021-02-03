@@ -1,38 +1,15 @@
 # proyecto-dwes-2
 ## Proyecto Fin de Grado Técnico Superior en Desarrollo de Aplicaciones Web
 ### Descripción
-Aplicación web para la Gestión Remota de Sistemas
+Aplicación web para votaciones simultáneas en procesos asamblearios
 ### Introducción del proyecto:
-El proyecto pretende crear un entorno web amigable para la administración de un sistema Linux remoto. 
+La aplicación pretende simplificar los procesos de voto tradicionales de "a mano alzada" y/o de "viva voz" que ralentizan la adopción de acuerdos en actos asamblearios.
 ### Finalidad
-Facilitar al usuario administrador las tareas habituales de gestión de servidores sin necesidad de acceder vía ssh o de tener que ser un especialista en el manejo de comandos. A través de la aplicación web, el usuario puede usar un navegador de internet para tener acceso al estado completo de su sistema, a la gestión de usuarios, configuración de red, instalación de aplicaciones, actualizaciones de sistema, y todo aquello que habitualmente puede hacerse desde la consola de comandos, pero en un entorno amigable e intuitivo que aspira a hacer más fácil la gestión de un servidor ubicado en cualquier parte del mundo.
+Facilitar la gestión de votaciones en procesos asamblearios poniendo a disposición de las organizaciones un sistema para que los delegados o compromisarios con derecho a voto puedan ejercerlo desde sus dispositivos móviles, en tiempo real y de manera simultánea evitando así que cada una de las ponencias tengan que ser llamados en orden secuencial para recabar su voto públicamente.
+El sistema debe ser configurado de antemano para que el día de la asamblea estén preparadas todas las ponencias que han de ser sometidas a votación, así como correctamente identificados los usuarios con derecho a voto. El día de la Asamblea, desde la administración del sistema, se habilitarán una a una cada ponencia, momento en el que los delegados podrán ejercer su voto **sólo a la ponencia activa**. En el momento que se detecte que todos ellos han ejercido el voto, o en su defecto, se de por terminado el tiempo marcado para ejercerlo, desde la parte de administración se mostrarán los resultados, que podrá ser proyectado en pantalla hacía los asistentes a fin de que puedan verificarlos, así como comprobar que su voto a sido contabilizado.
 ### Objetivos
-La aplicación permitirá a los administradores de sistemas actuar sobre las principales funciones del equipo:
-- Gestión de Usuarios
-    - Creación/Edición/Eliminación de Usuarios
-    - Creación/Edición/Eliminación de Grupos
-- Gestión de Apache/Nginx
-    - Configuración de VirtualHost
-    - Instalación de Certificados
-- Gestión de Bases de Datos
-    - Instalación y configuración del SGBD disponibles para el usuario
-- Gestión de Servicios
-    - Configuración FTP
-    - Configuración SSH
-    - Configuración Mail
-- Gestión de Archivos
-    - Configuración Permisos
-    - Compartición de carpetas
-    - Copiar/Mover/Eliminar archivos y/o directorios
-- Gestión de Dispositivos
-    - Configuración de Disco
-- Gestión de Diagnóstico
-    - Monitorización de sistema
-    - Actualización de paquetes
+Crear un front-end en función del rol del usuario. Para los usuarios llamados a votación, tendrán sus opciones visibles a través de sus dispositivos móviles con las opciones SI/NO/ABSTENCIÓN, así como otras opciones para el caso de que la votación requiera otro tipo de decisiones. La opción de votación sólo estará visible mientras una ponencia se encuentre activa, ofreciendo un mensaje de espera, además de opciones para revisar resultados de votaciones ya finalizadas.
 ### Medios hardware y software a utilizar
-Este proyecto se encarga de la parte de diseño, desarrollo y despliegue de la aplicación web, que conectará las órdenes del usuario con un lanzador de scripts que se encargarán, en última instancia, de ejecutar los comandos necesarios sobre el sistema en el que se está ejecutando. 
-
-Este proyecto es una parte de otro proyecto desarrollado conjuntamente con un alumno de Administración de Sistemas Informáticos en Red, por lo que no forma parte de él, la descripción sobre la ejecución de scripts, diseño de parámetros, y comprobación de errores, ya que la aplicación web, se limitará a recabar los posibles mensajes con el resultado obtenido para mostrarlo al usuario a través de la web.
 
 Para el desarrollo de la aplicación web se pretende utilizar el framework Django, conectado a una base de datos MySql. El entorno de desarrollo que se utilizará será Visual Studio Code, con los plugins necesarios para trabajar con Python. Como entorno de pruebas se utilizará un servidor remoto dentro de una red local (una pequeña máquina conectada al router de casa) con las siguientes características:
 
