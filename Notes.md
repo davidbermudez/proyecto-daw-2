@@ -86,3 +86,11 @@ Not Found: /favicon.ico
 [19/Jan/2021 17:57:25] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 8569
 ```
 El server se mantendrá activo hasta que interrumpamos la ejecución del comando
+
+
+
+---
+
+##Add Django OAuth Toolkit 
+https://django-oauth-toolkit.readthedocs.io/en/latest/getting_started.html#what-we-will-build
+
