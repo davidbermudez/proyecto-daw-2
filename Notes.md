@@ -29,10 +29,14 @@ Updated Pipfile.lock (06f36b)!
 Installing dependencies from Pipfile.lock (06f36b)...
     ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/0 — 00:00:00
 ```
+Añadir un complemento necesario para las imágenes
+```
+pipenv install Pillow
+```
 
 Creamos un nuevo proyecto:
 ```
-$ django-admin startproject project
+$ django-admin startproject project .
 ```
 
 Para verificar que ha creado la estructura necesaria de todo proyecto djando, examinamos archivos y directorios
@@ -45,16 +49,17 @@ El resultado es el siguiente:
 ```
 $ tree  
 .
+├── Notes.md
 ├── Pipfile
 ├── Pipfile.lock
-└── project
-   ├── manage.py
-   └── project
-       ├── asgi.py
-       ├── __init__.py
-       ├── settings.py
-       ├── urls.py
-       └── wsgi.py
+├── README.md
+├── asambleas
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
 
 2 directories, 8 files
 ```
@@ -85,11 +90,61 @@ Not Found: /favicon.ico
 [19/Jan/2021 17:57:25] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
 [19/Jan/2021 17:57:25] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 8569
 ```
+
 El server se mantendrá activo hasta que interrumpamos la ejecución del comando
 
-
-
 ---
+
+Creamos la primera aplicación:
+
+```
+django-admin startapp users
+```
+
+Incluimos la nueva app a asambleas/settings.py
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
+]
+```
+
+Creamos el modelo de datos para la aplicación Users
+
+users/models.py
+
+```
+from django.contrib.auth.models import User
+from django.db import models
+
+
+class Profile(models.Model):
+    """Profile model.
+
+    Extendemos el modelo base 'user' para añadirle más información
+    """
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
+
+    website = models.URLField(max_length=200, blank=True)
+
+    photo = models.ImageField(
+        upload_to='users/pictures',
+        blank=True,
+        null=True
+    )
+
+    date_modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        """Return username."""
+        return self.user.username
+
+```
 
 ##Add Social oAuth
 Instrucciones en: https://medium.com/trabe/oauth-authentication-in-django-with-social-auth-c67a002479c1
