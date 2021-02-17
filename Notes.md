@@ -91,6 +91,10 @@ El server se mantendrá activo hasta que interrumpamos la ejecución del comando
 
 ---
 
-##Add Django OAuth Toolkit 
-https://django-oauth-toolkit.readthedocs.io/en/latest/getting_started.html#what-we-will-build
+##Add Social oAuth
+Instrucciones en: https://medium.com/trabe/oauth-authentication-in-django-with-social-auth-c67a002479c1
+```
+pipenv install social-auth-app-django
+```
+Iniciar sesión en https://console.cloud.google.com y seleccionar API >> Credenciales
 
